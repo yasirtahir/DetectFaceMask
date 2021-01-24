@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.otaliastudios.cameraview.CameraView
+        android:id="@+id/cameraView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cameraAudio="off"
+        app:cameraFacing="front">
+
+        <com.yasir.detectfacemask.views.CameraOverlayView
+            android:id="@+id/overlayView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.otaliastudios.cameraview.CameraView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnSwitchCamera"
+        android:layout_width="@dimen/headerHeight"
+        android:layout_height="@dimen/headerHeight"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="@dimen/float_btn_margin"
+        android:layout_marginBottom="@dimen/float_btn_margin"
+        android:layout_marginEnd="@dimen/field_padding_right"
+        android:contentDescription="@string/switch_camera"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_switch_camera" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnToggleSound"
+        android:layout_width="@dimen/headerHeight"
+        android:layout_height="@dimen/headerHeight"
+        android:layout_below="@+id/btnSwitchCamera"
+        android:layout_alignStart="@+id/btnSwitchCamera"
+        android:layout_alignEnd="@+id/btnSwitchCamera"
+        android:contentDescription="@string/switch_camera"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_img_sound_disable" />
+
+    <br.vince.owlbottomsheet.OwlBottomSheet
+        android:id="@+id/helpBottomSheet"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_alignParentBottom="true" />
+
+</RelativeLayout>

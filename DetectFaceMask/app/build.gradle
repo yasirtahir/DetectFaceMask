@@ -1,0 +1,69 @@
+plugins {
+    id 'com.android.application'
+    id 'com.huawei.agconnect' // Applying HUAWEI Plugin
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.2"
+
+    defaultConfig {
+        applicationId "com.yasir.detectfacemask"
+        minSdkVersion 19
+        targetSdkVersion 30
+        versionCode 100
+        versionName "1.0.0"
+        multiDexEnabled true
+        resConfigs "en" // Limiting the resource files to English only
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    aaptOptions {
+        noCompress "ms" // This will prevent from compressing mindspore model files
+    }
+
+    signingConfigs {
+        release {
+            storeFile file('codelabs.jks')
+            keyAlias 'codelabkey'
+            keyPassword 'Software#123#'
+            storePassword 'Software#123#'
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.2.1'
+
+    // HMS Face detection ML Kit
+    implementation 'com.huawei.hms:ml-computer-vision-face:2.0.5.300'
+
+    // MindSpore
+    implementation 'mindspore:mindspore-lite:5.0.5.300'
+    implementation 'com.huawei.hms:ml-computer-model-executor:2.1.0.300'
+
+    // CameraView for camera interface
+    api 'com.otaliastudios:cameraview:2.6.2'
+
+    // Dependency libs
+    implementation 'com.jakewharton:butterknife:10.2.3'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
+
+    // Animation libs
+    implementation 'com.airbnb.android:lottie:3.6.0'
+    implementation 'com.github.Guilherme-HRamos:OwlBottomSheet:1.01'
+}

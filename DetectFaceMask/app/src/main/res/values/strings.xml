@@ -1,0 +1,9 @@
+<resources>
+    <string name="quit_msg">Are you sure, you want to close the application?</string>
+    <string name="quit_title">Confirmation</string>
+    <string name="app_name">Detect Mask</string>
+    <string name="permission_request">Please enable requested permissions in order to use all features of the application</string>
+    <string name="app_permissions">The app need these requested permissions in order to work properly. Please note that the application will not work properly until you allow the requested permissions</string>
+    <string name="switch_camera">Switch Camera</string>
+    <string name="switch_sound">Switch Sound</string>
+</resources>
