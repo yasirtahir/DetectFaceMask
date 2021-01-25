@@ -52,7 +52,7 @@ dependencies {
     // HMS Face detection ML Kit
     implementation 'com.huawei.hms:ml-computer-vision-face:2.0.5.300'
 
-    // MindSpore
+    // MindSpore Lite
     implementation 'mindspore:mindspore-lite:5.0.5.300'
     implementation 'com.huawei.hms:ml-computer-model-executor:2.1.0.300'
 
